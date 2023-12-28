@@ -40,7 +40,7 @@ img{
 } 
 i{
     font-weight: 400;
-    font-size: 15px;
+    font-size: 150px;
 }
 .right{
     display: flex;
@@ -55,6 +55,7 @@ i{
 .input-box header{
     font-weight: 700;
     text-align: center;
+    margin-top: 100px;
     margin-bottom: 45px;
 }
 .input-field{
@@ -64,8 +65,8 @@ i{
     padding: 0 10px 0 10px;
 }
 .input{
-    height: 60px;
-    width: 250px;
+    height: 45px;
+    width: 100%;
     background: transparent;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
@@ -82,12 +83,10 @@ i{
 }
 .input-field .input:focus ~ label{
     top: -10px;
-    height: auto;
     font-size: 13px;
 }
 .input-field .input:valid ~ label{
-    top:-10px;
-    height: 10px;
+    top: -10px;
     font-size: 13px;
     color: navy;
 }
