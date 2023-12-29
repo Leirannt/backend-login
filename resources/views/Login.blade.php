@@ -20,35 +20,29 @@
                     <form action="{{route('login-user')}}" method="post">
                         @csrf
                         <div class="input-box d-flex flex-column justify-content-center">
-                            <!-- <div class="tempatLogin"> -->
-                            <header>Login</header>
-                            <div class="input-field">
-                                <input type="text" class="input" name="Email" value="{{old('Email')}}">
-                                <label for="email">Email</label>
-                                <span class="text-danger">@error('Email') {{$message}} @enderror</span>
+                            <div class="tempatLogin">
+                                <header>Login</header>
+                                <div class="input-field">
+                                    <input type="text" class="input" name="Email" value="{{old('Email')}}">
+                                    <label for="email">Email</label>
+                                    <span class="text-danger">@error('Email') {{$message}} @enderror</span>
+                                </div>
+                                <div class="input-field">
+                                    <input type="password" class="input" name="Password" value="{{old('Password')}}">
+                                    <label for="password">Password</label>
+                                    <span class="text-danger">@error('Password') {{$message}} @enderror</span>
+                                </div>
+                                @if(Session::has('success'))
+                                <div class="alert alert-success">{{Session::get('success')}}</div>
+                                @endif
+                                @if(Session::has('success'))
+                                <div class="alert alert-success">{{Session::get('success')}}</div>
+                                <div class="alert alert-danfer">{{Session::get('fail')}}</div>
+                                @endif
+                                <button type="submit" class="btn btn-primary">Sign In</button>
+                                <br>
+                                <a href="registration">belum punya akun? buat akun</a>
                             </div>
-                            <div class="input-field">
-                                <input type="password" class="input" name="Password" value="{{old('Password')}}">
-                                <label for="password">Password</label>
-                                <span class="text-danger">@error('Password') {{$message}} @enderror</span>
-                            </div>
-                            @if(Session::has('success'))
-                            <div class="alert alert-success">{{Session::get('success')}}</div>
-                            @endif
-                            @if(Session::has('fail'))
-                            <script>
-                                Swal("Message", "{{Session::get('fail')}}", 'salah cok', {
-                                    button: true,
-                                    button: "OK"
-                                })
-                            </script>
-                            <!-- <div class="alert alert-danfer">{{Session::get('fail')}}</div> -->
-                            @endif
-                            <button type="submit" class="btn btn-primary">Sign In</button>
-                            <a href="{{route('forgot.password')}}">lupa pasword?</a>
-                            <br>
-                            <a href="registration">belum punya akun? buat akun</a>
-                            <!-- </div> -->
                         </div>
                     </form>
                 </div>

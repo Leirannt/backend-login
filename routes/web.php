@@ -17,14 +17,13 @@ use App\Http\Controllers\SendMail;
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+// route::get('/forgot-password', function () {
+//     return view('forgetpassword');
+// })->name('forgot.password');
 
 Route::get('/login', [loginController::class, 'login']);
 Route::get('/registration', [loginController::class, 'regist']);
 Route::post('/regist-user', [loginController::class, 'RegisterUser'])->name('regist-user');
 Route::post('/login-user', [loginController::class, 'LoginUser'])->name('login-user');
 Route::get('/login-user', [loginController::class, 'LoginUser'])->name('login-user');
-route::get('/forgot-password', function () {
-    return view('forgetpassword');
-})->name('forgot.password');
-// Route::get('send-email', [SendMail::class, 'index']);
 Route::get('/dashboard', [loginController::class, 'dashboard']);//nanti ganti buat masuk kedalam homepage

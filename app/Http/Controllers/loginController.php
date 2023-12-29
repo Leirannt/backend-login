@@ -39,7 +39,7 @@ class loginController extends Controller
         if ($res) {
             return back()->with('success', 'Registrasi Berhasil');
         } else {
-            return back()->with('fail, Sesuatu salah');
+            return back()->with('fail', 'Sesuatu salah');
         }
     }
     public function LoginUser(Request $request)
