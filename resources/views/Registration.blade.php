@@ -10,41 +10,59 @@
 </head>
 
 <body>
+    <!-- main container untuk page ini -->
     <div class="wrapp">
         <div class="container main">
+
+            <!-- row untuk dua kolom: side image dan form registrasi -->
             <div class="row">
                 <div class="col-md-6 side-image">
                     <img src="" alt="">
                 </div>
+
+                <!-- kolom untuk form registrasi -->
                 <div class="col-md-6">
                     <form action="{{route('regist-user')}}" method="post">
                         @csrf
                         <div class="input-box d-flex flex-column justyfy-content-center">
                             <!-- <div class="tempatRegistrasi"> -->
+                            <!-- header registrasi -->
                             <header>Create Account</header>
+
+                            <!-- input field untuk username -->
                             <div class="input-field">
                                 <input type="text" class="input" name="Username" value="{{old('Username')}}" required autocomplete="off">
                                 <label for="username">Username</label>
                                 <span class="text-danger">@error('Username') {{$message}} @enderror</span>
                             </div>
+
+                            <!-- input field untuk email -->
                             <div class="input-field">
                                 <input type="text" class="input" name="Email" value="{{old('email')}}" required>
                                 <label for="email">Email</label>
                                 <span class="text-danger">@error('Email') {{$message}} @enderror</span>
                             </div>
+
+                            <!-- input file untuk password -->
                             <div class="input-field">
                                 <input type="password" class="input" name="Password" value="{{old('Password')}}" required required autocomplete="off">
                                 <label for="password">Password</label>
                                 <span class="text-danger">@error('Password') {{$message}} @enderror</span>
                             </div>
+
+                            <!-- menampilkan success & fail allert -->
                             @if(Session::has('success'))
                             <div class="alert alert-success">{{Session::get('success')}}</div>
                             @endif
                             @if(Session::has('fail'))
                             <div class="alert alert-danfer">{{Session::get('fail')}}</div>
                             @endif
+
+                            <!-- tombol submit form -->
                             <button type="submit" class="btn btn-primary">Sign Up</button>
                             <br>
+
+                            <!-- link untuk login jika sudah punya akun -->
                             <a href="login">sudah punya akun? Masuk</a>
                             <!-- </div> -->
                         </div>

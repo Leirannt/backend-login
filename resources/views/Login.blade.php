@@ -10,28 +10,42 @@
 </head>
 
 <body>
+    <!-- main container untuk page nya -->
     <div class="wrapp">
         <div class="container main">
+
+            <!-- row untuk dua kolom: side image dan login form  -->
             <div class="row">
                 <div class="col-md-6 side-image">
                     <img src="" alt="">
                 </div>
+
+                <!-- kolom login form -->
                 <div class="col-md-6">
+                    <!-- form user login -->
                     <form action="{{route('login-user')}}" method="post">
                         @csrf
                         <div class="input-box d-flex flex-column justify-content-center">
                             <div class="tempatLogin">
+
+                                <!-- header  -->
                                 <header>Login</header>
+
+                                <!-- input field email untuk login -->
                                 <div class="input-field">
                                     <input type="text" class="input" name="Email" value="{{old('Email')}}">
                                     <label for="email">Email</label>
                                     <span class="text-danger">@error('Email') {{$message}} @enderror</span>
                                 </div>
+
+                                <!-- input field password untuk login -->
                                 <div class="input-field">
                                     <input type="password" class="input" name="Password" value="{{old('Password')}}">
                                     <label for="password">Password</label>
                                     <span class="text-danger">@error('Password') {{$message}} @enderror</span>
                                 </div>
+
+                                <!-- menampilkan success & fail allert -->
                                 @if(Session::has('success'))
                                 <div class="alert alert-success">{{Session::get('success')}}</div>
                                 @endif
@@ -39,8 +53,12 @@
                                 <div class="alert alert-success">{{Session::get('success')}}</div>
                                 <div class="alert alert-danfer">{{Session::get('fail')}}</div>
                                 @endif
+
+                                <!-- tombol submit untuk signin -->
                                 <button type="submit" class="btn btn-primary">Sign In</button>
                                 <br>
+
+                                <!-- link untuk ke page registrasi jika belum punya akun -->
                                 <a href="registration">belum punya akun? buat akun</a>
                             </div>
                         </div>
