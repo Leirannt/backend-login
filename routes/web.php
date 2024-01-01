@@ -27,3 +27,4 @@ Route::post('/regist-user', [loginController::class, 'RegisterUser'])->name('reg
 Route::post('/login-user', [loginController::class, 'LoginUser'])->name('login-user');
 Route::get('/login-user', [loginController::class, 'LoginUser'])->name('login-user');
 Route::get('/dashboard', [loginController::class, 'dashboard']);//nanti ganti buat masuk kedalam homepage
+Route::get('/', [ProfileController::class, 'profile']);//buat masuk ke dalem profile page
