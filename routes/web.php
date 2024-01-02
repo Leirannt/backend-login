@@ -26,6 +26,6 @@ Route::get('/registration', [loginController::class, 'regist']);
 Route::post('/regist-user', [loginController::class, 'RegisterUser'])->name('regist-user');
 Route::post('/login-user', [loginController::class, 'LoginUser'])->name('login-user');
 Route::get('/login-user', [loginController::class, 'LoginUser'])->name('login-user');
-Route::get('/dashboard', [loginController::class, 'dashboard']);//nanti ganti buat masuk kedalam homepage
-# deskripsi produk
+Route::get('/dashboard', [loginController::class, 'dashboard']); //nanti ganti buat masuk kedalam homepage
 Route::get('deskripsi/{id}', [deskripsiProdukController::class, 'deskripsiProduk']);
+Route::get('/', [ProfileController::class, 'profile']);//buat masuk ke dalem profile page
