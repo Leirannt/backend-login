@@ -7,6 +7,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SendMail;
 use App\Http\Controllers\catagoryController;
 use App\Http\Controllers\tipebarangController;
+use App\Http\Controllers\BarangController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -38,3 +39,7 @@ Route::get('/catagory', [catagoryController::class, 'index'])->name('catagory');
 
 Route::get('/tipebarang/{catagori_id}', [tipebarangController::class, 'index'])->name('tipebarang');
 Route::get('/pensil', [tipebarangController::class, 'pensil'])->name('pensil');
+
+Route::get('/barang', [BarangController::class, 'index']);
+Route::get('/barang/search', [BarangController::class, 'search'])->name('barang.search');
+// Route::get('/barang/{id}', [BarangController::class, 'detail'])->name('barang.detail');
