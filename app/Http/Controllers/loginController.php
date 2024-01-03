@@ -80,6 +80,6 @@ class loginController extends Controller
     //menampilkan dashboard jika berhasil login
     public function dashboard()
     {
-        return "welcome";
+        return view("Catagory");
     }
 }
