@@ -16,10 +16,10 @@ class ProfileController extends Controller
     public function update(Request $request, $id)
     {
         $profile_data=userProfile::where('id', $id)->first();
-        $profile_data->username=$request->username;
+        $profile_data->Username=$request->Username;
         $profile_data->name=$request->name;
         $profile_data->nim=$request->nim;
-        $profile_data->email=$request->email;
+        $profile_data->Email=$request->Email;
         $profile_data->profile_image=$request->profile_image;
         $profile_data->address=$request->address;
         $profile_data->birthday=$request->birthday;

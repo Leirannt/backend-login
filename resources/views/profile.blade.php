@@ -42,7 +42,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Username</label>
-                                    <input type="text" class="form-control mb-1" name="username" value="{{$profile_data->username}}">
+                                    <input type="text" class="form-control mb-1" name="Username" value="{{$profile_data->Username}}">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Name</label>
@@ -54,7 +54,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">E-mail</label>
-                                    <input type="text" class="form-control mb-1" name="email" value="{{$profile_data->email}}">
+                                    <input type="text" class="form-control mb-1" name="Email" value="{{$profile_data->Email}}">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Alamat/Address</label>

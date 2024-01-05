@@ -32,12 +32,11 @@ Route::get('/login', [loginController::class, 'login']);
 Route::get('/registration', [loginController::class, 'regist']);
 Route::post('/regist-user', [loginController::class, 'RegisterUser'])->name('regist-user');
 Route::post('/login-user', [loginController::class, 'LoginUser'])->name('login-user');
-Route::post('/update/{id}', [ProfileController::class, 'update']);
 Route::get('/login-user', [loginController::class, 'LoginUser'])->name('login-user');
 Route::get('/dashboard', [loginController::class, 'dashboard']); //nanti ganti buat masuk kedalam homepage
 Route::get('deskripsi/{id}', [deskripsiProdukController::class, 'deskripsiProduk']);
 Route::get('/', [ProfileController::class, 'profile']);//buat masuk ke dalem profile page
-
+Route::post('/update/{id}', [ProfileController::class, 'update']);
 Route::get('/catagory', [catagoryController::class, 'index'])->name('catagory');
 
 Route::get('/tipebarang/{catagori_id}', [tipebarangController::class, 'index'])->name('tipebarang');
