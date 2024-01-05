@@ -12,7 +12,8 @@
         <h4 class="font-weight-bold py-3 mb-4">
             Informasi Profil Akun
         </h4>
-        <form method="POST">
+        <form method="post" action = "/update/{{$profile_data->id}}" input type ="hidden"
+         name="id" value="{{$profile_data->id}}">
         @csrf
         <div class="card overflow-hidden">
             <div class="row no-gutters row-bordered row-border-light">
@@ -29,7 +30,7 @@
                                 <img src="picture/profile.png" alt class="d-block ui-w-80">
                                 <label class="btn btn-outline-danger">
                                         Upload new photo
-                                        <input type="file" class="account-settings-fileinput">
+                                        <input type="file" class="account-settings-fileinput" name="profile_image">
                                     </label> &nbsp;
                                     <div class="text-light small mt-1">Allowed JPG, GIF or PNG. Max size of 800K</div>
                             </div>
@@ -41,31 +42,31 @@
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Username</label>
-                                    <input type="text" class="form-control mb-1" value="{{$profile_data->username}}">
+                                    <input type="text" class="form-control mb-1" name="username" value="{{$profile_data->username}}">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Name</label>
-                                    <input type="text" class="form-control" value="{{$profile_data->name}}">
+                                    <input type="text" class="form-control" name="name" value="{{$profile_data->name}}">
                                 </div>
                                 <div class = "form-group">
                                     <label class="form-label">NIM</label>
-                                    <input type="string" class="form-control" value="{{$profile_data->nim}}">
+                                    <input type="string" class="form-control" name="nim" value="{{$profile_data->nim}}">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">E-mail</label>
-                                    <input type="text" class="form-control mb-1" value="{{$profile_data->email}}">
+                                    <input type="text" class="form-control mb-1" name="email" value="{{$profile_data->email}}">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Alamat/Address</label>
-                                    <input type="text" class="form-control" value="{{$profile_data->address}}">
+                                    <input type="text" class="form-control" name="address" value="{{$profile_data->address}}">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Birthday</label>
-                                    <input type="text" class="form-control" value="{{$profile_data->birthday}}">
+                                    <input type="text" class="form-control" name="birthday" value="{{$profile_data->birthday}}">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Country</label>
-                                    <input type="text" class="form-control" value="{{$profile_data->country}}">
+                                    <input type="text" class="form-control" name="country" value="{{$profile_data->country}}">
                                 </div>
                             </div>
                             <hr class="border-light m-0">
@@ -73,11 +74,11 @@
                                 <h6 class="mb-4">Contacts</h6>
                                 <div class="form-group">
                                     <label class="form-label">Phone</label>
-                                    <input type="text" class="form-control" value="{{$profile_data->phone}}">
+                                    <input type="text" class="form-control" name="phone" value="{{$profile_data->phone}}">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">Website</label>
-                                    <input type="text" class="form-control" value="{{$profile_data->website}}">
+                                    <input type="text" class="form-control" name="website" value="{{$profile_data->website}}">
                                 </div>
                             </div>
                         </div>
@@ -86,10 +87,10 @@
             </div>
         </div>
         <div class="text-right mt-3">
-            <button type="button" class="btn btn-primary">Save changes</button>&nbsp;
-            <button type="button" class="btn btn-danger" id="back">Back</button>
+            <button type="submit" class="btn btn-primary" name="submit">Save changes</button>&nbsp;
         </div>
         </form>
+        <button type="button" class="btn btn-danger" id="back">Back</button>
     </div>
     <script>
         $(document).ready(function() {

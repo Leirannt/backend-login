@@ -12,5 +12,22 @@ class ProfileController extends Controller
         $profile_data=userProfile::first();
         return view('profile', compact('profile_data'));
     }
+
+    public function update(Request $request, $id)
+    {
+        $profile_data=userProfile::where('id', $id)->first();
+        $profile_data->username=$request->username;
+        $profile_data->name=$request->name;
+        $profile_data->nim=$request->nim;
+        $profile_data->email=$request->email;
+        $profile_data->profile_image=$request->profile_image;
+        $profile_data->address=$request->address;
+        $profile_data->birthday=$request->birthday;
+        $profile_data->country=$request->country;
+        $profile_data->phone=$request->phone;
+        $profile_data->website=$request->website;
+        $profile_data->save();
+        return redirect('/');
+    }
 }
 
