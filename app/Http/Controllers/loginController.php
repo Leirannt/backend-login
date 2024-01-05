@@ -33,7 +33,7 @@ class loginController extends Controller
         //validasi data
         $request->validate([
             'Username' => 'required',
-            'Email' => 'required|email|unique:users',
+            'Email' => 'required|email|unique:data',
             'Password' => 'required|min:5|max:15'
         ]);
 
