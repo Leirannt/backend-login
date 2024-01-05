@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id()->primarykeys;
             $table->string('nama_barang');
             $table->string('foto_barang');
+            $table->timestamps();
         });
     }
 

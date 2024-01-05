@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('deskripsi');
             $table->string('nama_toko');
             $table->integer('rating');
+            $table->timestamps();
         });
     }
 

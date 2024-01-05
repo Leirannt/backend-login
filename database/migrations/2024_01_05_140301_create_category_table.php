@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('Foto barang');
             $table->integer('rating');
             $table->decimal('harga');
+            $table->timestamps();
         });
     }
 
