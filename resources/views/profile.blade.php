@@ -95,7 +95,7 @@
     <script>
         $(document).ready(function() {
             $("#back").click(function() {
-                window.location.href="../dashboard_fikri/index.html"
+                window.location.href="Catagory"
             })
         })
     </script>

@@ -37,6 +37,7 @@ Route::get('/dashboard', [loginController::class, 'dashboard']); //nanti ganti b
 Route::get('deskripsi/{id}', [deskripsiProdukController::class, 'deskripsiProduk']);
 Route::get('/', [ProfileController::class, 'profile']);//buat masuk ke dalem profile page
 Route::post('/update/{id}', [ProfileController::class, 'update']);
+Route::get('/dashboard', [ProfileController::class, 'dashboard']);
 Route::get('/catagory', [catagoryController::class, 'index'])->name('catagory');
 
 Route::get('/tipebarang/{catagori_id}', [tipebarangController::class, 'index'])->name('tipebarang');

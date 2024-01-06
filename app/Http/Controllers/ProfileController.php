@@ -29,5 +29,9 @@ class ProfileController extends Controller
         $profile_data->save();
         return redirect('/');
     }
+    public function dashboard()
+    {
+        return view("Catagory");
+    }
 }
 
